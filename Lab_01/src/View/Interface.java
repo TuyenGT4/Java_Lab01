@@ -85,27 +85,27 @@ public class Interface extends JFrame {
 		panel_Button.setLayout(new FlowLayout(FlowLayout.LEFT, 30, 0));
 		getContentPane().add(panel_Button);
 		
-		JButton btnThem = new JButton("Thêm");
+		btnThem = new JButton("Thêm");
 		btnThem.setHorizontalAlignment(SwingConstants.LEFT);
 		panel_Button.add(btnThem);
 		
-		JButton btnXoa = new JButton("Xóa");
+		btnXoa = new JButton("Xóa");
 		btnXoa.setHorizontalAlignment(SwingConstants.LEFT);
 		panel_Button.add(btnXoa);
 		
-		JButton btnSua = new JButton("Sửa");
+		btnSua = new JButton("Sửa");
 		btnSua.setHorizontalAlignment(SwingConstants.LEFT);
 		panel_Button.add(btnSua);
 		
-		JButton btnLuu = new JButton("Lưu");
+		btnLuu = new JButton("Lưu");
 		btnLuu.setHorizontalAlignment(SwingConstants.LEFT);
 		panel_Button.add(btnLuu);
 		
-		JButton btnKLuu = new JButton("K.Lưu");
+		btnKLuu = new JButton("K.Lưu");
 		btnKLuu.setHorizontalAlignment(SwingConstants.LEFT);
 		panel_Button.add(btnKLuu);
 		
-		JButton btnThoat = new JButton("Thoát");
+		btnThoat = new JButton("Thoát");
 		btnThoat.setHorizontalAlignment(SwingConstants.LEFT);
 		panel_Button.add(btnThoat);
 		
