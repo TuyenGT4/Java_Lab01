@@ -4,6 +4,8 @@ import java.awt.*;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 
+import process.controller;
+
 public class Interface extends JFrame {
 
 	private static final long serialVersionUID = 1L;
@@ -24,6 +26,7 @@ public class Interface extends JFrame {
 			public void run() {
 				try {
 					Interface frame = new Interface();
+					controller Controller = new controller(frame);
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -113,10 +116,50 @@ public class Interface extends JFrame {
 		String[] columnName = {"Mã loại", "Tên loại", "Đơn giá"};
 		// Tạo model cho bảng
         DefaultTableModel tableModel = new DefaultTableModel(columnName, 0);
-        // Tạo JTable với model
-        JTable table = new JTable(tableModel);
+		// gán table với model trên
+        table = new JTable(tableModel);
 		scroll_HienThiDanhSach.setViewportView(table);
 		
         
+	}
+	// các phương thức getter để controller có thể truy xuất vào interface
+	public JTextField getTextFieldMaLoai() {
+		return textField_MaLoai;
+	}
+
+	public JTextField getTextFieldTenLoai() {
+		return textField_TenLoai;
+	}
+
+	public JTextField getTextFieldDonGia() {
+		return textField_DonGia;
+	}
+
+	public JButton getBtnThem() {
+		return btnThem;
+	}
+
+	public JButton getBtnXoa() {
+		return btnXoa;
+	}
+
+	public JButton getBtnSua() {
+		return btnSua;
+	}
+
+	public JButton getBtnLuu() {
+		return btnLuu;
+	}
+
+	public JButton getBtnKLuu() {
+		return btnKLuu;
+	}
+
+	public JButton getBtnThoat() {
+		return btnThoat;
+	}
+
+	public JTable getTable() {
+		return table;
 	}
 }
