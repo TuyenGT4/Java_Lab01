@@ -1,9 +1,9 @@
 package Model_Controller;
 
-public class SanPham {
+public class LoaiSP {
 	private String maLoai, tenLoai;
 	private long donGia;
-	public SanPham(String maLoai, String tenLoai, long donGia) {
+	public LoaiSP(String maLoai, String tenLoai, long donGia) {
 		this.maLoai = maLoai;
 		this.tenLoai = tenLoai;
 		this.donGia = donGia;

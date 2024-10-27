@@ -10,12 +10,12 @@ import java.awt.event.MouseListener;
 
 public class controller {
     private Interface view;
-    private DanhSachSanPham model;
+    private DanhSachLoaiSanPham model;
     private DefaultTableModel tableModel;
 
     public controller(Interface view) {
         this.view = view;
-        this.model = new DanhSachSanPham();
+        this.model = new DanhSachLoaiSanPham();
         this.tableModel = (DefaultTableModel) view.getTable().getModel();
         
         // Khởi tạo các sự kiện
@@ -74,7 +74,7 @@ public class controller {
             @Override
             public void actionPerformed(ActionEvent e) {
                 if (validateInput()) {
-                    SanPham sp = new SanPham(
+                    LoaiSP sp = new LoaiSP(
                             view.getTextFieldMaLoai().getText(),
                             view.getTextFieldTenLoai().getText(),
                             Long.parseLong(view.getTextFieldDonGia().getText())
@@ -182,7 +182,7 @@ public class controller {
         view.getTextFieldDonGia().setEnabled(enable);
     }
 
-    private void addTableRow(SanPham sp) {
+    private void addTableRow(LoaiSP sp) {
         Object[] row = new Object[]{
                 sp.getMaLoai(),
                 sp.getTenLoai(),
@@ -192,7 +192,7 @@ public class controller {
         model.themSanPham(sp);
     }
 
-    private void updateTableRow(int row, SanPham sp) {
+    private void updateTableRow(int row, LoaiSP sp) {
         tableModel.setValueAt(sp.getMaLoai(), row, 0);
         tableModel.setValueAt(sp.getTenLoai(), row, 1);
         tableModel.setValueAt(sp.getDonGia(), row, 2);
