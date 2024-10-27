@@ -76,8 +76,8 @@ public class controller {
                 if (validateInput()) {
                     LoaiSP sp = new LoaiSP(
                             view.getTextFieldMaLoai().getText(),
-                            view.getTextFieldTenLoai().getText(),
-                            Long.parseLong(view.getTextFieldDonGia().getText())
+                            view.getTextFieldTenLoai().getText()
+                           
                     );
                     
                     int selectedRow = view.getTable().getSelectedRow();
@@ -130,11 +130,11 @@ public class controller {
                 if (selectedRow >= 0) {
                     String maLoai = tableModel.getValueAt(selectedRow, 0).toString();
                     String tenLoai = tableModel.getValueAt(selectedRow, 1).toString();
-                    String donGia = tableModel.getValueAt(selectedRow, 2).toString();
+                   
                     
                     view.getTextFieldMaLoai().setText(maLoai);
                     view.getTextFieldTenLoai().setText(tenLoai);
-                    view.getTextFieldDonGia().setText(donGia);
+                    
                 }
             }
 
@@ -154,39 +154,31 @@ public class controller {
 
     private boolean validateInput() {
         if (view.getTextFieldMaLoai().getText().trim().isEmpty() ||
-            view.getTextFieldTenLoai().getText().trim().isEmpty() ||
-            view.getTextFieldDonGia().getText().trim().isEmpty()) {
+            view.getTextFieldTenLoai().getText().trim().isEmpty()) {
             JOptionPane.showMessageDialog(view, "Vui lòng nhập đầy đủ thông tin!");
             return false;
         }
-        
-        try {
-            Long.parseLong(view.getTextFieldDonGia().getText().trim());
-        } catch (NumberFormatException e) {
-            JOptionPane.showMessageDialog(view, "Đơn giá phải là số!");
-            return false;
-        }
-        
+               
         return true;
     }
 
     private void clearFields() {
         view.getTextFieldMaLoai().setText("");
         view.getTextFieldTenLoai().setText("");
-        view.getTextFieldDonGia().setText("");
+      
     }
 
     private void enableFields(boolean enable) {
         view.getTextFieldMaLoai().setEnabled(enable);
         view.getTextFieldTenLoai().setEnabled(enable);
-        view.getTextFieldDonGia().setEnabled(enable);
+
     }
 
     private void addTableRow(LoaiSP sp) {
         Object[] row = new Object[]{
                 sp.getMaLoai(),
-                sp.getTenLoai(),
-                sp.getDonGia()
+                sp.getTenLoai()
+
         };
         tableModel.addRow(row);
         model.themSanPham(sp);
@@ -195,6 +187,5 @@ public class controller {
     private void updateTableRow(int row, LoaiSP sp) {
         tableModel.setValueAt(sp.getMaLoai(), row, 0);
         tableModel.setValueAt(sp.getTenLoai(), row, 1);
-        tableModel.setValueAt(sp.getDonGia(), row, 2);
     }
 }

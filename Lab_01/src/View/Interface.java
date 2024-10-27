@@ -16,7 +16,6 @@ public class Interface extends JFrame {
 	private JScrollPane scroll_HienThiDanhSach;
 	private JTable table;
 	private DefaultTableModel tableModel;
-	private JTextField textField_DonGia;
 	
 
 	/**
@@ -72,14 +71,6 @@ public class Interface extends JFrame {
 		lblMaLoai.setBounds(24, 68, 49, 14);
 		panel_nhapInf.add(lblMaLoai);
 		
-		textField_DonGia = new JTextField();
-		textField_DonGia.setBounds(382, 96, 151, 20);
-		panel_nhapInf.add(textField_DonGia);
-		textField_DonGia.setColumns(10);
-		
-		JLabel lblDonGia = new JLabel("Đơn giá:");
-		lblDonGia.setBounds(323, 99, 49, 14);
-		panel_nhapInf.add(lblDonGia);
 		
 		panel_Button = new JPanel();
 		panel_Button.setBounds(10, 149, 566, 29);
@@ -114,7 +105,7 @@ public class Interface extends JFrame {
 		scroll_HienThiDanhSach.setBounds(10, 189, 566, 163);
 		getContentPane().add(scroll_HienThiDanhSach);
 		
-		String[] columnName = {"Mã loại", "Tên loại", "Đơn giá"};
+		String[] columnName = {"Mã loại", "Tên loại"};
 		// Tạo model cho bảng
         tableModel = new DefaultTableModel(columnName, 0);
 		// gán table với model trên
@@ -124,7 +115,6 @@ public class Interface extends JFrame {
 		// Khởi tạo các trường nhập liệu ban đầu là disable
         textField_MaLoai.setEnabled(false);
         textField_TenLoai.setEnabled(false);
-        textField_DonGia.setEnabled(false);
 
         // Khởi tạo các nút điều khiển ban đầu
         btnLuu.setEnabled(false);
@@ -141,9 +131,6 @@ public class Interface extends JFrame {
 		return textField_TenLoai;
 	}
 
-	public JTextField getTextFieldDonGia() {
-		return textField_DonGia;
-	}
 
 	public JButton getBtnThem() {
 		return btnThem;

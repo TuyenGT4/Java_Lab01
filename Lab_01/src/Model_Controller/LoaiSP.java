@@ -2,11 +2,11 @@ package Model_Controller;
 
 public class LoaiSP {
 	private String maLoai, tenLoai;
-	private long donGia;
-	public LoaiSP(String maLoai, String tenLoai, long donGia) {
+
+	public LoaiSP(String maLoai, String tenLoai) {
 		this.maLoai = maLoai;
 		this.tenLoai = tenLoai;
-		this.donGia = donGia;
+
 	}
 	public String getMaLoai() {
 		return maLoai;
@@ -20,12 +20,4 @@ public class LoaiSP {
 	public void setTenLoai(String tenLoai) {
 		this.tenLoai = tenLoai;
 	}
-	public long getDonGia() {
-		return donGia;
-	}
-	public void setDonGia(long donGia) {
-		this.donGia = donGia;
-	}
-	
-	
 }
