@@ -1,4 +1,4 @@
-package process;
+package Model_Controller;
 
 import java.util.ArrayList;
 
@@ -14,4 +14,8 @@ public class DanhSachSanPham {
 	public void xoaSanPham(SanPham obj) {
 		list.remove(obj);
 	}
+	
+	 public ArrayList<SanPham> getList() {
+	        return list;
+	 }
 }

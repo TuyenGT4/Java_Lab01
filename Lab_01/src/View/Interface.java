@@ -4,7 +4,7 @@ import java.awt.*;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 
-import process.controller;
+import Model_Controller.controller;
 
 public class Interface extends JFrame {
 
@@ -15,6 +15,7 @@ public class Interface extends JFrame {
 	private JTextField textField_MaLoai, textField_TenLoai;
 	private JScrollPane scroll_HienThiDanhSach;
 	private JTable table;
+	private DefaultTableModel tableModel;
 	private JTextField textField_DonGia;
 	
 
@@ -115,10 +116,19 @@ public class Interface extends JFrame {
 		
 		String[] columnName = {"Mã loại", "Tên loại", "Đơn giá"};
 		// Tạo model cho bảng
-        DefaultTableModel tableModel = new DefaultTableModel(columnName, 0);
+        tableModel = new DefaultTableModel(columnName, 0);
 		// gán table với model trên
         table = new JTable(tableModel);
 		scroll_HienThiDanhSach.setViewportView(table);
+		
+		// Khởi tạo các trường nhập liệu ban đầu là disable
+        textField_MaLoai.setEnabled(false);
+        textField_TenLoai.setEnabled(false);
+        textField_DonGia.setEnabled(false);
+
+        // Khởi tạo các nút điều khiển ban đầu
+        btnLuu.setEnabled(false);
+        btnKLuu.setEnabled(false);
 		
         
 	}

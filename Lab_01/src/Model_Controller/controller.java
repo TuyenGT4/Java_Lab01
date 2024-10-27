@@ -1,4 +1,4 @@
-package process;
+package Model_Controller;
 
 import View.Interface;
 import javax.swing.*;

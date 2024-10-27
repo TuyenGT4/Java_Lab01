@@ -1,4 +1,4 @@
-package process;
+package Model_Controller;
 
 public class SanPham {
 	private String maLoai, tenLoai;
